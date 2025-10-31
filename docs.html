@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <why r="" you="" looking="" in="" inspect="" element?="">
+            <stop bro="">
+                <i said="" stop="">
+                    <ur going="" to="" regret="" this="">
+                        <last chance="">
+                            <title>GGD</title>
+                            <told ya="">
+                                <why did="" you="" even="" open="" this="">
+
+                                </why>
+                            </told>
+                        </last>
+                    </ur>
+                </i>
+            </stop>
+        </why>
+    </head>
+<body>
+
+<div class="sidenav">
+  <a href="/">Home</a>
+  <a href="docs.html">Documentation</a>
+  <a href="https:\\www.github.com/GGD-Coding-language">GitHub</a>
+</div>
+
+<div class="content">
+<h1>Documentation</h1>
+<h2>Syntax</h2>
+<h3>Popups</h3>
+<p>One of the first syntax commands I have ever made is a very important one is geode&#39;s offical documentation<br>The </p>
+<pre><code>FLAlertLayer::create(
+    &quot;Title&quot;,
+    &quot;Text&quot;,
+    &quot;Button&quot;
+)-&gt;show();
+</code></pre>
+<p>but in GGD I changed it to be more simpler, even though this is already very simple</p>
+<pre><code>NewAlert{
+  &quot;Title&quot;,
+  &quot;Text&quot;,
+  &quot;Button&quot;
+}
+</code></pre>
+<p>I also made it so that it is easy to make a disclaimer popup right as you load into the main menu and/or when you download the mod.</p>
+<pre><code>DisclaimerAlert{
+  &quot;Disclaimer Text&quot;
+}
+</code></pre>
+<p>This is where the disclaimer&#39;s title is set to &quot;Disclaimer&quot; and the button is &quot;agree&quot; (and you cannot get a popup for the TOS and the PrPo, because then, why would you already have geode?)</p>
+<h3>Buttons</h3>
+<p>One of the most NEEDED UI elements, the button!<br>Usally you need to type in all of this:</p>
+<pre><code>bool MyLayer::init() {
+    
+
+    auto spr = ButtonSprite::create(&quot;Button&quot;);
+
+    auto btn = CCMenuItemSpriteExtra::create(
+        spr, this, nullptr
+    );
+
+    
+    menu-&gt;addChild(btn);
+
+   
+}
+</code></pre>
+<p>But instead for GGD it is</p>
+<pre><code>CreateButton(&quot;Name&quot;, Place, ID, Enabled on default?)
+</code></pre>
+<p>If you want to make a main menu button, you need to type in</p>
+<pre><code>MMnewButton(&quot;Name&quot;, Filename, ID)
+</code></pre>
+<h3>Events</h3>
+<p>So, the 2nd MOST IMPORTANT thing in modding, events.<br>For most things in GD, such as CCTextInputNode, GD and Cocos2d-x use a delegate-based event system<br>As an alternative to this system, Geode introduces events.<br>These events are still too complex, so we are making a whole other site about it. <br>It is on the left, please check it out 😊</p>
+<h3>Fields</h3>
+<p>Kinda like variables, fields are varibles. One is can be connected to how many times a player has jumped<br>Here is a example in C++:</p>
+<pre><code>int totalJumps = 0;
+
+class $modify(PlayerObject) {
+    void pushButton(PlayerButton button) {
+
+        totalJumps++;
+        PlayerObject::pushButton(button);
+    }
+};
+</code></pre>
+<p>This is not even the best way to store jumps, but I made a better way to do this:</p>
+<pre><code>Var &lt;Name Here&gt; = VALUE
+</code></pre>
+<p>And to store stuff like how many jumps a player makes you can do:</p>
+<pre><code>Var totalJumps = 0
+waitfor pushButton(space):
+    Var totalJumps = totalJumps+1
+    log.info(&quot;the player has jumped {totalJumps}&quot;)
+    return
+</code></pre>
+
+<h2>JSON File</h2>
+<p>This is a pre-generated file that is made with stuff like "Mod Name" and "Mod Description", this is also where you can add tags, ex. joke. it is here to add other notes and other stuff that is not visible in mod.json that is made by geode</p>
+<p>You can preview the json file here:</p>
+<a href="mod_info.json.html">JSON FILE</a>
+</div>
+
+</body>
+</html>
