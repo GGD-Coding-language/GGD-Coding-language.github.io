@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download GGD Command Line</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="sidenav">
+    <a href="/">Home</a>
+    <a href="docs.html">Documentation</a>
+    <a href="download.html" class="active">Download</a>
+    <a href="https://www.github.com/GGD-Coding-language">Github</a>
+    <a href="settings.html">Settings</a>
+  </div>
+
+  <div class="content download-page">
+    <h2>Download GGD Command Line</h2>
+    <p class="subtitle">Here is what we think will work best:</p>
+
+    <!-- Detected / Recommended OS -->
+    <p id="auto-detect" class="auto-detect"></p>
+
+    <!-- Recommended OS Download -->
+    <div id="recommended-download" class="download-area single">
+      <div class="download-card" id="recommended-card"></div>
+    </div>
+
+    <!-- Divider for other operating systems -->
+    <h3>All Operating Systems</h3>
+
+    <!-- All OS Downloads -->
+    <div id="download-area" class="download-area">
+      <div class="download-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows logo" class="os-icon">
+        <a href="https://github.com/GGD-Coding-language/GGD-Command-Line" class="download-btn win">Download for Windows</a>
+      </div>
+
+      <div class="download-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" class="os-icon">
+        <a href="https://github.com/GGD-Coding-language/Macos-CLI" class="download-btn mac">Download for macOS</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const osText = document.getElementById('auto-detect');
+    const recommendedCard = document.getElementById('recommended-card');
+
+    const platform = navigator.platform.toLowerCase();
+    let detected = "";
+    let recommendedHTML = "";
+
+    if (platform.includes("win")) {
+      detected = "Windows";
+      recommendedHTML = `
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" alt="Windows logo" class="os-icon">
+        <a href="https://github.com/GGD-Coding-language/GGD-Command-Line" class="download-btn win">Download for Windows</a>
+      `;
+    } else if (platform.includes("mac")) {
+      detected = "macOS";
+      recommendedHTML = `
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" class="os-icon">
+        <a href="https://github.com/GGD-Coding-language/Macos-CLI" class="download-btn mac">Download for macOS</a>
+      `;
+    } else {
+      detected = "ERROR — Operating system not detected or unsupported (Linux).";
+      recommendedHTML = `<p style="color:red; font-weight:bold;">No recommended version available.</p>`;
+    }
+
+    osText.textContent = "Detected OS: " + detected;
+    recommendedCard.innerHTML = recommendedHTML;
+  </script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAQdULHUlp4Mi4Z6UltaZ4W62SyLO31zH4",
+      authDomain: "easygdmodding.firebaseapp.com",
+      projectId: "easygdmodding",
+      storageBucket: "easygdmodding.firebasestorage.app",
+      messagingSenderId: "407648058843",
+      appId: "1:407648058843:web:8652f78509e2ab0e123bfe",
+      measurementId: "G-DYMYS1N3BV"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>

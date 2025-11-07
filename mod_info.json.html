@@ -5,7 +5,37 @@
   <title>GGD</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <div class="sidenav">
+    <a href="/">Home</a>
+    <a href="docs.html">Documentation</a>
+    <a href="download.html" class="active">Download</a>
+    <a href="https://www.github.com/GGD-Coding-language">Github</a>
+    <a href="settings.html">Settings</a>
+  </div>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQdULHUlp4Mi4Z6UltaZ4W62SyLO31zH4",
+    authDomain: "easygdmodding.firebaseapp.com",
+    projectId: "easygdmodding",
+    storageBucket: "easygdmodding.firebasestorage.app",
+    messagingSenderId: "407648058843",
+    appId: "1:407648058843:web:8652f78509e2ab0e123bfe",
+    measurementId: "G-DYMYS1N3BV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 uhhhh. work in progress <progress></progress>
 infinite loading bar lol
 </body>

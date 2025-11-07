@@ -80,3 +80,74 @@ body {
   .sidenav a { text-align: center; }
   .content { margin-left: 0; }
 }
+
+.download-page h2,
+.download-page p {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.download-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.download-card {
+  text-align: center;
+}
+
+.os-icon {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid;
+  transition: 0.3s ease;
+}
+
+.download-btn.win {
+  border-color: #0078d7;
+  color: #0078d7;
+}
+
+.download-btn.win:hover {
+  background-color: #0078d7;
+  color: white;
+}
+
+.download-btn.mac {
+  border-color: #000;
+  color: #000;
+}
+
+.download-btn.mac:hover {
+  background-color: #000;
+  color: white;
+}
+
+.auto-detect {
+  margin-top: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.content h3 {
+  text-align: center;
+}
